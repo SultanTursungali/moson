@@ -23,35 +23,48 @@ const HeroSection = () => {
   const { lang } = useLanguage();
 
   return (
-    <section
-      className="relative w-full overflow-hidden"
-      style={{ marginTop: "90px" }}
-    >
-      {/* Гифка задаёт высоту секции */}
-      <img
-        src="/moson.gif"
-        alt="moson background"
-        className="w-full h-auto block"
-        draggable={false}
-        style={{ display: "block" }}
-      />
-      {/* Контент поверх гифки */}
-      <div className="absolute inset-0 z-10 flex flex-col justify-end">
-        <div className="relative z-20 px-4 md:px-8 pb-8 md:pb-16 flex flex-col md:flex-row md:items-end w-full mt-auto">
-          <div className="flex-1 mb-8 md:mb-0">
-            <h1 className="text-3xl md:text-5xl font-light text-[#EAF8FF] mb-4 leading-[1.2]">
-              {texts[lang].title}
-            </h1>
-          </div>
-          <div className="max-w-full md:max-w-md ml-0 md:ml-auto">
-            <p className="text-[#EAF8FF] opacity-70 mb-4 text-base md:text-lg font-light leading-[1.6]">
-              {texts[lang].desc}
-            </p>
-            <button className="bg-white text-black px-6 md:px-8 py-2 md:py-3 rounded-[12px] hover:bg-gray-200 transition font-semibold text-base md:text-lg">
-              {lang === "ru" ? "Вступить" : lang === "en" ? "Join" : "Қосылу"}
-            </button>
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/100 via-black/30 to-transparent rounded-[80px]" />
-
+    <section className="relative w-full overflow-hidden">
+      {/* Адаптивный отступ сверху под хедер */}
+      <div className="h-[70px] sm:h-[80px] md:h-[90px] lg:h-[120px] xl:h-[135px]" />
+      
+      {/* Контейнер для изображения */}
+      <div className="relative w-full">
+        {/* Фоновое изображение */}
+        <img
+          src="/moson.gif"
+          alt="moson background"
+          className="w-full h-auto block min-h-[400px] sm:min-h-[500px] md:min-h-[600px] lg:min-h-[700px] xl:min-h-[800px] object-cover"
+          draggable={false}
+        />
+        
+        {/* Градиентный оверлей */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/100 via-black/30 to-transparent" />
+        
+        {/* Контент поверх изображения */}
+        <div className="absolute inset-0 z-10 flex flex-col justify-end">
+          <div className="relative z-20 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-24 pb-6 sm:pb-8 md:pb-12 lg:pb-16 xl:pb-20">
+            
+            {/* Контейнер контента */}
+            <div className="flex flex-col lg:flex-row lg:items-end w-full gap-6 sm:gap-8 md:gap-10 lg:gap-12">
+              
+              {/* Заголовок */}
+              <div className="flex-1 lg:mb-0">
+                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-light text-[#EAF8FF] mb-4 sm:mb-6 md:mb-8 leading-[1.1] sm:leading-[1.15] md:leading-[1.2]">
+                  {texts[lang].title}
+                </h1>
+              </div>
+              
+              {/* Описание и кнопка */}
+              <div className="w-full lg:max-w-md xl:max-w-lg 2xl:max-w-xl lg:ml-auto">
+                <p className="text-[#EAF8FF] opacity-70 mb-4 sm:mb-5 md:mb-6 text-sm sm:text-base md:text-lg lg:text-xl font-light leading-[1.5] sm:leading-[1.6]">
+                  {texts[lang].desc}
+                </p>
+                
+                <button className="bg-white text-black px-4 sm:px-6 md:px-8 py-2 sm:py-2.5 md:py-3 rounded-[12px] hover:bg-gray-200 transition-colors duration-200 font-semibold text-sm sm:text-base md:text-lg lg:text-xl w-full sm:w-auto">
+                  {lang === "ru" ? "Вступить" : lang === "en" ? "Join" : "Қосылу"}
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
