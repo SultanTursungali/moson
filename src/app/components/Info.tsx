@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function info() {
   return (
-    <section className="w-full relative aspect-[16/12] overflow-hidden rounded-[80px]">
+    <section className="w-full relative aspect-[16/12] overflow-hidden rounded-t-[80px]">
       {/* Фон-картинка без блюра */}
       <div className="absolute inset-0 z-0 overflow-hidden w-full h-full pointer-events-none">
         <Image
@@ -10,11 +10,11 @@ export default function info() {
           alt="Background"
           fill
           priority
-          className="object-cover w-auto h-[1440px] rounded-[80px]"
+          className="object-cover w-auto h-[1440px] rounded-t-[80px]"
           style={{ zIndex: 0 }}
         />
         {/* Только градиент без блюра */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/100 via-black/30 to-transparent rounded-[80px]" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/100 via-black/30 to-transparent rounded-t-[80px]" />
       </div>
 
       {/* Контент */}

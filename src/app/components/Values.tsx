@@ -73,7 +73,7 @@ const ValuesSection = () => {
     <section className="relative bg-black py-20 px-6 z-30 overflow-hidden">
       <div className="absolute inset-0 z-0">
         <Image
-          src="/conferenceVal.jpg"
+          src="/goldenlines.jpg"
           alt="Background rays"
           fill
           className="object-cover object-center"
@@ -99,7 +99,7 @@ const ValuesSection = () => {
             }}
           >
             <Image
-              src="/light-icon.png"
+              src="/values/book.png"
               alt={t.values[0].title}
               width={750}
               height={760}
@@ -137,7 +137,7 @@ const ValuesSection = () => {
             }}
           >
             <Image
-              src="/ethics-icon.png"
+              src="/values/hands.png"
               alt={t.values[1].title}
               width={450}
               height={259}
@@ -175,7 +175,7 @@ const ValuesSection = () => {
             }}
           >
             <Image
-              src="/unity-icon.png"
+              src="/values/man.png"
               alt={t.values[2].title}
               width={700}
               height={500}

@@ -2,6 +2,7 @@ import React from "react";
 import Header from "./components/Header";
 import LanguageSwitcher from "@/app/ui/LanguageSwitcher";
 import { LanguageProvider } from "@/app/context/LangContext";
+import Footer from "./components/Footer";
 
 export default function RootLayout({
   children,
@@ -17,6 +18,7 @@ export default function RootLayout({
             <LanguageSwitcher />
           </div>
           {children}
+          <Footer />
         </LanguageProvider>
       </body>
     </html>

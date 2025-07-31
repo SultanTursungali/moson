@@ -27,13 +27,13 @@ const navLinks = [
 ];
 
 const rightNavLinks = [
-  { 
-    label: { ru: "Совет ВО", en: "Council", kz: "Кеңес" }, 
+  {
+    label: { ru: "Совет ВО", en: "Council", kz: "Кеңес" },
     href: "#",
     active: false,
   },
-  { 
-    label: { ru: "Контакты", en: "Contacts", kz: "Байланыс" }, 
+  {
+    label: { ru: "Контакты", en: "Contacts", kz: "Байланыс" },
     href: "#",
     active: false,
   },
@@ -53,7 +53,7 @@ interface Link {
   label: { ru: string; en: string; kz: string };
   href: string;
   active: boolean;
-  isButton?: boolean; // Опциональное свойство, если оно есть не всегда
+  isButton?: boolean;
 }
 
 const Header = () => {
@@ -66,7 +66,6 @@ const Header = () => {
   return (
     <header className="w-full fixed top-0 left-0 z-51 bg-[rgba(4,4,4,0.1)] backdrop-blur-[75px] border-b border-[#C1C9CC] h-[70px] sm:h-[80px] md:h-[90px] lg:h-[120px] xl:h-[135px] flex items-center">
       <nav className="w-full max-w-[1920px] mx-auto flex items-center justify-between px-4 sm:px-6 md:px-8 lg:px-12 xl:px-[60px] 2xl:px-[170px] relative h-full">
-        
         {/* Десктопная навигация */}
         <div className="hidden xl:flex w-full items-center justify-between relative">
           {/* Левая часть навигации */}
@@ -166,7 +165,9 @@ const Header = () => {
             ))}
             <div className="whitespace-nowrap">
               <button className="px-3 py-1 border border-[#C1C9CC] rounded-[24px] text-[#C1C9CC] text-xs font-light hover:bg-[#C1C9CC] hover:text-black transition-all">
-                {rightNavLinks[2].label && rightNavLinks[2].label[lang] ? rightNavLinks[2].label[lang] : ""}
+                {rightNavLinks[2].label && rightNavLinks[2].label[lang]
+                  ? rightNavLinks[2].label[lang]
+                  : ""}
               </button>
             </div>
           </div>
@@ -191,7 +192,9 @@ const Header = () => {
           onClick={() => setOpen(!open)}
           aria-label="Открыть меню"
         >
-          <span className="text-[#FFD700] text-2xl sm:text-3xl font-bold">?</span>
+          <span className="text-[#FFD700] text-2xl sm:text-3xl font-bold">
+            ?
+          </span>
         </button>
 
         {/* Боковая панель */}
@@ -207,15 +210,15 @@ const Header = () => {
           >
             &times;
           </button>
-          
-          {allNavLinks.map((link, idx) =>
-            link.isButton ?  (
+
+          {allNavLinks.map((link: Link, idx) =>
+            link.isButton ? (
               <button
                 key={idx}
                 className="mb-4 sm:mb-6 px-4 sm:px-5 py-2 border border-[#C1C9CC] rounded-[24px] text-[#C1C9CC] text-base sm:text-lg font-light hover:bg-[#C1C9CC] hover:text-black transition-all w-full"
                 onClick={() => setOpen(false)}
               >
-                {link.label && link.label[lang] ? link.label[lang] : ""}
+                {link.label?.[lang] ?? ""}
               </button>
             ) : (
               <a
@@ -226,7 +229,7 @@ const Header = () => {
                 }`}
                 onClick={() => setOpen(false)}
               >
-                {link.label && link.label[lang] ? link.label[lang] : ""}
+                {link.label?.[lang] ?? ""}
               </a>
             )
           )}
