@@ -23,7 +23,11 @@ const LanguageSwitcher = () => {
               key={l.code}
               onClick={() => setLang(l.code as "ru" | "en" | "kz")}
               className={`relative flex items-center justify-center px-2 md:px-3 py-1 md:py-2 rounded-[24px] font-semibold transition-all duration-300
-                ${isActive ? "text-[#686F75] mr-1 md:mr-2 scale-105" : "text-[#686F75] opacity-40 hover:opacity-80"}
+                ${
+                  isActive
+                    ? "text-[#686F75] mr-1 md:mr-2 scale-105"
+                    : "text-[#686F75] opacity-40 hover:opacity-80"
+                }
                 ${idx !== languages.length - 1 ? "mr-1 md:mr-2" : ""}
               `}
               aria-current={isActive}
@@ -212,7 +216,7 @@ export default function Lodges() {
                   rgba(9, 22, 34, 1) 100%
                 )
               `,
-              backgroundBlendMode: 'multiply',
+              backgroundBlendMode: "multiply",
             }}
           />
           <div className="absolute h-[10%] inset-0 bg-gradient-to-b from-black/100 via-black/50 to-transparent rounded-[20px] sm:rounded-[40px] lg:rounded-[80px]" />
@@ -220,7 +224,7 @@ export default function Lodges() {
 
         {/* Контент главной секции */}
         <div className="relative z-10 flex items-start justify-center h-full py-20 sm:py-32 lg:py-40">
-          <div className="text-center px-4">
+          <div className="text-center px-4 ">
             <h1
               className="text-4xl sm:text-6xl md:text-8xl lg:text-[120px] font-bold tracking-tight leading-[0.9] whitespace-pre-line"
               style={{
@@ -250,7 +254,8 @@ export default function Lodges() {
             className="w-full h-full object-cover filter blur-xl brightness-200 opacity-20"
             style={{
               transform: "scaleX(-1)",
-              WebkitMaskImage: "linear-gradient(to top, black 80%, transparent 100%)",
+              WebkitMaskImage:
+                "linear-gradient(to top, black 80%, transparent 100%)",
               maskImage: "linear-gradient(to top, black 80%, transparent 100%)",
               WebkitMaskSize: "100% 100%",
               maskSize: "100% 100%",
@@ -271,7 +276,8 @@ export default function Lodges() {
           <div
             className="rounded-[16px] sm:rounded-[20px] md:rounded-[24px] px-4 sm:px-6 md:px-8 py-4 sm:py-6 shadow-lg flex flex-col sm:flex-row items-center gap-4 sm:gap-6 md:gap-8 mx-auto max-w-xs sm:max-w-2xl md:max-w-4xl lg:max-w-6xl xl:max-w-7xl"
             style={{
-              background: "radial-gradient(circle at center bottom, #0A141A 0%, #2A251C 50%, #1A1611 100%)",
+              background:
+                "radial-gradient(circle at center bottom, #0A141A 0%, #2A251C 50%, #1A1611 100%)",
             }}
           >
             <img
@@ -311,10 +317,22 @@ export default function Lodges() {
             <path d="M 764 70 Q 764 80 774 80" className="connection-line" />
 
             {/* Горизонтальные линии влево и вправо от центра */}
-            <path d="M 754 80 L 158 80 Q 148 80 148 90" className="connection-line" />
-            <path d="M 754 80 L 474 80 Q 464 80 464 90" className="connection-line" />
-            <path d="M 774 80 L 1054 80 Q 1064 80 1064 90" className="connection-line" />
-            <path d="M 774 80 L 1370 80 Q 1380 80 1380 90" className="connection-line" />
+            <path
+              d="M 754 80 L 158 80 Q 148 80 148 90"
+              className="connection-line"
+            />
+            <path
+              d="M 754 80 L 474 80 Q 464 80 464 90"
+              className="connection-line"
+            />
+            <path
+              d="M 774 80 L 1054 80 Q 1064 80 1064 90"
+              className="connection-line"
+            />
+            <path
+              d="M 774 80 L 1370 80 Q 1380 80 1380 90"
+              className="connection-line"
+            />
 
             {/* Центральная вертикальная линия продолжение */}
             <path d="M 764 80 L 764 120" className="connection-line" />
@@ -353,7 +371,8 @@ export default function Lodges() {
                       </h4>
                       <div className="mt-auto space-y-1">
                         <p className="text-[10px] text-gray-400 mb-2">
-                          {currentTexts.dateFoundedLabel} {currentTexts.lodges[idx].founded}
+                          {currentTexts.dateFoundedLabel}{" "}
+                          {currentTexts.lodges[idx].founded}
                         </p>
                         <p className="text-[10px] text-gray-400">
                           {currentTexts.languageLabel}
@@ -392,7 +411,8 @@ export default function Lodges() {
                     </h4>
                     <div className="mt-auto space-y-1">
                       <p className="text-[10px] text-gray-400 mb-2">
-                        {currentTexts.dateFoundedLabel} {currentTexts.lodges[idx].founded}
+                        {currentTexts.dateFoundedLabel}{" "}
+                        {currentTexts.lodges[idx].founded}
                       </p>
                       <p className="text-[10px] text-gray-400">
                         {currentTexts.languageLabel}
@@ -430,10 +450,12 @@ export default function Lodges() {
                     </h4>
                     <div className="space-y-1">
                       <p className="text-[9px] text-gray-400">
-                        {currentTexts.dateFoundedLabel} {currentTexts.lodges[idx].founded}
+                        {currentTexts.dateFoundedLabel}{" "}
+                        {currentTexts.lodges[idx].founded}
                       </p>
                       <p className="text-[9px] text-gray-400">
-                        {currentTexts.languageLabel} {currentTexts.lodges[idx].location}
+                        {currentTexts.languageLabel}{" "}
+                        {currentTexts.lodges[idx].location}
                       </p>
                     </div>
                   </div>
