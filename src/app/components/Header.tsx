@@ -105,8 +105,12 @@ const Header = () => {
           : "h-[70px] sm:h-[80px] md:h-[90px] lg:h-[120px] xl:h-[135px]"
       }`}
       style={{
-        backdropFilter: scrolled ? 'blur(30px) saturate(180%)' : 'blur(50px) saturate(180%)',
-        WebkitBackdropFilter: scrolled ? 'blur(30px) saturate(180%)' : 'blur(50px) saturate(180%)'
+        backdropFilter: scrolled
+          ? "blur(30px) saturate(180%)"
+          : "blur(50px) saturate(180%)",
+        WebkitBackdropFilter: scrolled
+          ? "blur(30px) saturate(180%)"
+          : "blur(50px) saturate(180%)",
       }}
     >
       <nav className="w-full max-w-[1920px] mx-auto flex items-center justify-between px-4 sm:px-6 md:px-8 lg:px-12 xl:px-[60px] 2xl:px-[170px] relative h-full">
@@ -196,7 +200,9 @@ const Header = () => {
                 <a
                   href={link.href}
                   className={`block text-white font-light text-sm px-3 py-2 text-center transition-all duration-300 hover:text-white ${
-                    link.active ? "text-white drop-shadow-lg" : "text-[rgba(255,255,255,0.8)] hover:drop-shadow-lg"
+                    link.active
+                      ? "text-white drop-shadow-lg"
+                      : "text-[rgba(255,255,255,0.8)] hover:drop-shadow-lg"
                   }`}
                 >
                   {link.label?.[lang] ?? ""}
@@ -297,14 +303,9 @@ const Header = () => {
 
         {/* Улучшенная боковая панель с еще более прозрачным фоном */}
         <div
-          className={`fixed top-0 left-0 h-screen w-[300px] sm:w-[350px] shadow-2xl z-40 transform transition-all duration-500 ease-out ${
+          className={`fixed top-0 left-0 h-screen w-[300px] sm:w-[350px] bg-[#091622] shadow-2xl z-40 transform transition-all duration-500 ease-out ${
             open ? "translate-x-0 opacity-100" : "-translate-x-full opacity-0"
-          } flex flex-col pt-[80px] sm:pt-[100px] px-6 sm:px-8 lg:hidden border-r-2 border-[rgba(255,215,0,0.3)]`}
-          style={{
-            background: 'rgba(9, 22, 34, 0.1)',
-            backdropFilter: 'blur(40px) saturate(180%)',
-            WebkitBackdropFilter: 'blur(40px) saturate(180%)'
-          }}
+          } flex flex-col pt-[80px] sm:pt-[100px] px-6 sm:px-8 lg:hidden border-r-2 border-[#FFD700] border-opacity-30`}
         >
           {/* Декоративная линия сверху */}
           <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#FFD700] to-[#FFA500] drop-shadow-glow" />
@@ -394,9 +395,9 @@ const Header = () => {
             className="fixed inset-0 z-30 lg:hidden transition-all duration-500"
             onClick={() => setOpen(false)}
             style={{
-              background: 'rgba(0,0,0,0.2)',
-              backdropFilter: 'blur(20px)',
-              WebkitBackdropFilter: 'blur(20px)'
+              background: "rgba(0,0,0,0.2)",
+              backdropFilter: "blur(20px)",
+              WebkitBackdropFilter: "blur(20px)",
             }}
           />
         )}
